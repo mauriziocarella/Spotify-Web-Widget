@@ -25,14 +25,14 @@ const Advanced = () => {
 				<div className="mb-3">
 					<h6>Use the following link to fetch current song details for your chat bot/moderator</h6>
 					<Code>
-						{process.env.PUBLIC_URL}/api/widget/{user.id}/text
+						{window.location.origin}{process.env.PUBLIC_URL}/api/widget/{user.id}/text
 					</Code>
 				</div>
 
 				<div className="mb-2" style={{fontSize: 12}}>
 					<div className="mb-1"><a href="https://nightbot.tv" rel="noreferrer" target="_blank">Nightbot</a></div>
 					<Code>
-						/me Current playing: $(urlfetch {process.env.PUBLIC_URL}/api/widget/{user.id}/text)
+						/me Current playing: $(urlfetch {window.location.origin}{process.env.PUBLIC_URL}/api/widget/{user.id}/text)
 					</Code>
 				</div>
 			</Collapse>
@@ -125,14 +125,14 @@ const Home = () => {
 			<div className="mb-4">
 				<h4>To use your widget create a new browser source with this URL</h4>
 				<Code>
-					{process.env.PUBLIC_URL}/widget/{user.id}
+					{window.location.origin}{process.env.PUBLIC_URL}/widget/{user.id}
 				</Code>
 				<div className="text-small text-semi-muted font-italic">Set height of canvas as 20% of width (ex. 1000x200)</div>
 			</div>
 
 			<div className="">
 				<Button
-					href={`${process.env.PUBLIC_URL}/widget/${user.id}`}
+					href={`${window.location.origin}${process.env.PUBLIC_URL}/widget/${user.id}`}
 					target={'_blank'}
 					color="primary"
 				>

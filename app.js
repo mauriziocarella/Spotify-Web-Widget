@@ -8,6 +8,10 @@ const config = require('./config');
 
 const app = express();
 
+app.enable('trust proxy');
+
+app.set('trust proxy', 'loopback');
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));

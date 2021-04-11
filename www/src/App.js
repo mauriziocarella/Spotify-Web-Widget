@@ -19,6 +19,10 @@ const Authenticated = ({children}) => {
 	const dispatch = useDispatch();
 
 	React.useEffect(() => {
+		axios.defaults.baseURL = process.env.PUBLIC_URL;
+	}, []);
+
+	React.useEffect(() => {
 		axios.get(`/api/auth/me`)
 			.then(({data: user}) => {
 				dispatch(auth.set(user));
@@ -40,7 +44,7 @@ const Authenticated = ({children}) => {
 const Router = () => {
 	return (
 		<>
-			<BrowserRouter basename={process.env.PUBLIC_URL || ''}>
+			<BrowserRouter basename={process.env.PUBLIC_URL}>
 				<Switch>
 					<Route path={'/auth/login'} component={LoginPage} exact/>
 					<Redirect path={'/auth'} to={'/auth/login'} exact/>

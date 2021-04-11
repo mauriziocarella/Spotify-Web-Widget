@@ -8,19 +8,17 @@ const config = require('../../config');
 
 const {User} = require('../../db/models');
 
-const api = () => new SpotifyWebApi({
-	clientId: config.spotify.client_id,
-	clientSecret: config.spotify.secret,
-	redirectUri: `${config.app.public_url}/api/auth/spotify/callback`,
-});
-
 router.use(cors());
 router.use(async (req, res, next) => {
 	if (req.session.user) {
 		req.user = await User.findByPk(req.session.user.id);
 	}
 
-	req.spotify = api();
+	req.spotify = new SpotifyWebApi({
+		clientId: config.spotify.client_id,
+		clientSecret: config.spotify.secret,
+		redirectUri: `${req.protocol}://${req.get('host')}${config.app.public_url}/api/auth/spotify/callback`,
+	});
 
 	next();
 });

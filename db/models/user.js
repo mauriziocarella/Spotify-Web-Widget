@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		}
 	}, {
+		tableName: 'users',
 		hooks: {
 			beforeCreate: async function(user) {
 				if (user.changed('password')) {

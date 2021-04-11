@@ -6,15 +6,9 @@ const {User, SpotifyCredentials} = require('../../../db/models');
 
 const config = require('../../../config');
 
-const api = () => new SpotifyWebApi({
-	clientId: config.spotify.client_id,
-	clientSecret: config.spotify.secret,
-	redirectUri: `${config.app.public_url}/api/auth/spotify/callback`,
-});
-const spotify = api();
-
 router.get('/spotify/callback', async function (req, res, next) {
 	const code = req.query.code;
+	const spotify = req.spotify;
 
 	const {profile, body} = await spotify.authorizationCodeGrant(code)
 		.then(function({body}) {
@@ -57,6 +51,7 @@ router.get('/spotify/callback', async function (req, res, next) {
 	res.redirect(config.app.public_url);
 });
 router.get('/spotify', function (req, res, next) {
+	const spotify = req.spotify;
 	const url = spotify.createAuthorizeURL(['user-read-private', 'user-read-email', 'user-read-currently-playing', 'user-read-playback-state']);
 	res.redirect(url);
 });

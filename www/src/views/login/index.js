@@ -9,7 +9,7 @@ const Login = () => {
 				<h1 className="my-4">Login</h1>
 				<h5 className="my-4 font-weight-normal text-semi-muted">Login with your spotify account to link the app and get access to widget link</h5>
 				<Button
-					href={`${process.env.APP_BASENAME || ''}/api/auth/spotify`}
+					href={`${process.env.PUBLIC_URL}/api/auth/spotify`}
 					color="primary"
 				>
 					SPOTIFY

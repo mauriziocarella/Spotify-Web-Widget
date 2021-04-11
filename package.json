@@ -27,6 +27,7 @@
 		"cors": "^2.8.5",
 		"debug": "~2.6.9",
 		"dotenv": "^8.2.0",
+		"dotenv-cli": "^4.0.0",
 		"ejs": "~2.6.1",
 		"express": "~4.16.1",
 		"express-session": "^1.17.1",
