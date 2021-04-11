@@ -1,0 +1,66 @@
+$body-bg: #181818;
+$body-color: #ffffff;
+
+$theme-colors: (
+	"primary": #13c48a,
+);
+
+@import "~bootstrap/scss/bootstrap";
+@import "animations";
+
+.text-semi-muted {
+	color: lighten($text-muted, 20%)
+}
+
+.square {
+	&:after {
+		content: '';
+		display: block;
+		padding-bottom: 100%;
+	}
+}
+
+.text-small {
+	font-size: .8em;
+}
+
+.absolute-fill {
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+.absolute-bottom {
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.btn {
+	&.btn-link {
+		&, &:active, &:focus {
+			outline: none;
+			box-shadow: none;
+		}
+	}
+}
+
+.modal {
+	color: $body-bg;
+}
+
+.bg-dark {
+	background-color: $body-bg;
+}
+
+@for $i from 0 through 100 {
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		@include media-breakpoint-up($breakpoint) {
+			$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+			.w#{$infix}-#{$i} {
+				width: #{$i * 1%};
+			}
+		}
+	}
+}

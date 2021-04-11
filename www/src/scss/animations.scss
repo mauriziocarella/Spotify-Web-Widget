@@ -1,0 +1,22 @@
+@import "~animate.css";
+
+$transition-duration: 500ms;
+
+.zoom {
+	transform: scale(0);
+	transition: $transition-duration ease-in-out;
+
+	&.active {
+		transform: scale(1);
+	}
+}
+
+.grow {
+	width: 0;
+	overflow: hidden;
+	transition: $transition-duration ease-in-out;
+
+	&.active {
+		width: 100%;
+	}
+}
