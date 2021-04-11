@@ -61,4 +61,7 @@ typings/
 .next
 
 # IntelliJ IDE settings
-.idea
+.idea/
+
+# React build output
+build/
