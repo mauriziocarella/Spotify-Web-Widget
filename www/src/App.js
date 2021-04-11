@@ -19,10 +19,6 @@ const Authenticated = ({children}) => {
 	const dispatch = useDispatch();
 
 	React.useEffect(() => {
-		axios.defaults.baseURL = process.env.PUBLIC_URL;
-	}, []);
-
-	React.useEffect(() => {
 		axios.get(`/api/auth/me`)
 			.then(({data: user}) => {
 				dispatch(auth.set(user));
@@ -63,6 +59,10 @@ const Router = () => {
 };
 
 const App = () => {
+	React.useEffect(() => {
+		axios.defaults.baseURL = process.env.PUBLIC_URL;
+	}, []);
+
 	return (
 		<Provider store={store}>
 			<Router/>
