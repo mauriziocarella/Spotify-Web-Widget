@@ -48,7 +48,7 @@ router.get('/spotify/callback', async function (req, res, next) {
 	req.session.user = {
 		id: user.id,
 	};
-	res.redirect(config.app.public_url);
+	res.redirect(config.app.public_url || '/');
 });
 router.get('/spotify', function (req, res, next) {
 	const spotify = req.spotify;

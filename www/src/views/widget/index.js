@@ -71,13 +71,13 @@ const Widget = () => {
 		<>
 			<div className="position-relative overflow-hidden" style={{paddingBottom: '20%'}}>
 				<div
-					className={classNames('position-absolute absolute-fill d-flex animate__animated overflow-hidden bg-dark', {
+					className={classNames('position-absolute absolute-fill d-flex animate__animated overflow-hidden bg-body', {
 						[`animate__${Animations[animation].in}`]: isPlaying,
 						[`animate__${Animations[animation].out}`]: !isPlaying,
 					})}
 					style={{
 						animationDelay: loading && '-1s',
-						borderRadius: 30,
+						// borderRadius: 30,
 					}}
 				>
 					<div
@@ -94,10 +94,10 @@ const Widget = () => {
 						className="position-relative d-flex flex-column w-80"
 					>
 						<div className="d-inline-flex flex-column justify-content-around flex-grow-1 w-100 px-4 py-2">
-							<div className="text-truncate" style={{fontSize: '30vh', lineHeight: 1.2}}>
+							<div className="text-truncate" style={{fontSize: '7vw', lineHeight: 1.2}}>
 								{item.title}
 							</div>
-							<div className="text-truncate font-weight-lighter" style={{fontSize: '20vh', lineHeight: 1.2}}>
+							<div className="text-truncate font-weight-lighter" style={{fontSize: '5vw', lineHeight: 1.2}}>
 								{item.artist}
 							</div>
 						</div>

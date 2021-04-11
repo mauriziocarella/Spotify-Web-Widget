@@ -2,9 +2,11 @@ import React from 'react';
 
 import {Button} from 'reactstrap';
 
+import Container from '../../components/Container';
+
 const Login = () => {
 	return (
-		<div className="container text-center">
+		<Container className="container text-center">
 			<div className="mb-2">
 				<h1 className="my-4">Login</h1>
 				<h5 className="my-4 font-weight-normal text-semi-muted">Login with your spotify account to link the app and get access to widget link</h5>
@@ -22,7 +24,7 @@ const Login = () => {
 					Maurizio Carella
 				</a>
 			</div>
-		</div>
+		</Container>
 	);
 };
 

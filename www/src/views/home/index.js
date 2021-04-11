@@ -8,6 +8,7 @@ import axios from 'axios';
 import auth from '../../redux/auth';
 
 import Code from '../../components/Code/Code';
+import Container from '../../components/Container';
 
 const Advanced = () => {
 	const user = useSelector(({auth}) => auth.user);
@@ -117,7 +118,7 @@ const Home = () => {
 	const user = useSelector(({auth}) => auth.user);
 
 	return (
-		<div className="container text-center">
+		<Container className="container text-center">
 			<div className="my-4">
 				<h1 className="d-inline-block mr-2">Welcome back</h1><h1 className="d-inline-block font-weight-normal">{user.displayName}</h1>
 			</div>
@@ -147,7 +148,7 @@ const Home = () => {
 			<div className="my-4">
 				<Advanced/>
 			</div>
-		</div>
+		</Container>
 	);
 };
 

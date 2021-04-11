@@ -8,6 +8,10 @@ $theme-colors: (
 @import "~bootstrap/scss/bootstrap";
 @import "animations";
 
+body {
+	background-color: transparent;
+}
+
 .text-semi-muted {
 	color: lighten($text-muted, 20%)
 }
@@ -49,7 +53,7 @@ $theme-colors: (
 	color: $body-bg;
 }
 
-.bg-dark {
+.bg-body {
 	background-color: $body-bg;
 }
 
