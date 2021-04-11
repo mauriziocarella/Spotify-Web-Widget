@@ -64,7 +64,7 @@ const App = () => {
 	React.useEffect(() => {
 		axios.defaults.baseURL = process.env.PUBLIC_URL;
 
-		setLoading(true);
+		setLoading(false);
 	}, []);
 
 	if (loading) return null;
