@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
 		tableName: 'users_settings',
 	});
 	UserSetting.associate = function (models) {
-		UserSetting.belongsTo(models.User, {
+		UserSetting.User = UserSetting.belongsTo(models.User, {
 			as: 'user',
 			foreignKey: 'userId',
 			onDelete: 'CASCADE',

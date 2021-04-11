@@ -4,8 +4,9 @@ const path = require('path');
 
 router.use('/api', require('./api'));
 
+router.use(express.static(path.join(__dirname, '..', 'build')));
 router.get('*', function (req, res, next) {
-	res.sendFile(path.join(__dirname, '..', '..', '..', 'dist', 'index.html'));
+	res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
 });
 
 module.exports = router;
