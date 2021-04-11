@@ -3,7 +3,6 @@ import {useParams} from "react-router-dom";
 import axios from "axios";
 import _ from "lodash";
 import classNames from 'classnames';
-import {useSelector} from 'react-redux';
 
 const Animations = {
 	backLeft: {
