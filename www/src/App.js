@@ -40,7 +40,7 @@ const Authenticated = ({children}) => {
 const Router = () => {
 	return (
 		<>
-			<BrowserRouter basename={process.env.APP_BASENAME || ''}>
+			<BrowserRouter basename={process.env.PUBLIC_URL || ''}>
 				<Switch>
 					<Route path={'/auth/login'} component={LoginPage} exact/>
 					<Redirect path={'/auth'} to={'/auth/login'} exact/>
