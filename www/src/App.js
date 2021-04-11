@@ -67,7 +67,7 @@ const App = () => {
 		setLoading(true);
 	}, []);
 
-	if (!loading) return null;
+	if (loading) return null;
 
 	return (
 		<Provider store={store}>
