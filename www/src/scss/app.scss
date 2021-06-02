@@ -1,9 +1,12 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
 $body-bg: #181818;
 $body-color: #ffffff;
 
-$theme-colors: (
+$theme-colors: map-merge($theme-colors, (
 	"primary": #13c48a,
-);
+));
 
 @import "~bootstrap/scss/bootstrap";
 @import "animations";
@@ -28,6 +31,15 @@ body {
 	font-size: .8em;
 }
 
+.link-inherit {
+	color: inherit;
+
+	&:hover {
+		color: inherit;
+		opacity: .8;
+	}
+}
+
 .absolute-fill {
 	left: 0;
 	top: 0;
@@ -37,6 +49,10 @@ body {
 .absolute-bottom {
 	bottom: 0;
 	left: 0;
+	right: 0;
+}
+.absolute-top-right {
+	top: 0;
 	right: 0;
 }
 
@@ -55,6 +71,13 @@ body {
 
 .bg-body {
 	background-color: $body-bg;
+}
+
+.opacity-0 {
+	opacity: 0;
+}
+.opacity-1 {
+	opacity: 1;
 }
 
 @for $i from 0 through 100 {

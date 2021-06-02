@@ -20,3 +20,19 @@ $transition-duration: 500ms;
 		width: 100%;
 	}
 }
+
+$transitions: (
+	'': 150ms,
+	'fast': 100ms,
+	'slow': 300ms,
+	'slower': 500ms,
+);
+@each $name, $duration in $transitions {
+	@if($name != "") {
+		$name: "-#{$name}"
+	}
+
+	.transition#{$name} {
+		transition: all $duration ease;
+	}
+}

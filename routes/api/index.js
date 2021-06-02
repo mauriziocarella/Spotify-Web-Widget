@@ -17,7 +17,7 @@ router.use(async (req, res, next) => {
 	req.spotify = new SpotifyWebApi({
 		clientId: config.spotify.client_id,
 		clientSecret: config.spotify.secret,
-		redirectUri: `https://${req.get('host')}${config.app.public_url}/api/auth/spotify/callback`,
+		redirectUri: `https://${req.get('host')}${config.app.public_url || ''}/api/auth/spotify/callback`,
 	});
 
 	next();

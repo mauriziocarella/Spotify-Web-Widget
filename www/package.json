@@ -6,6 +6,8 @@
 		"start": "dotenv react-scripts start",
 		"build": "dotenv -e ../.env react-scripts build && rm -rf ../build && mv ./build ../build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	}
+		"eject": "react-scripts eject",
+		"lint": "../node_modules/.bin/eslint src/**/*.js src/**/*.jsx"
+	},
+	"devDependencies": {}
 }

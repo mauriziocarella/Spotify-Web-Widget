@@ -1,0 +1,50 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"standard",
+		"standard-react",
+		"plugin:@typescript-eslint/eslint-recommended"
+	],
+	"env": {
+		"node": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 2020,
+		"ecmaFeatures": {
+			"legacyDecorators": true,
+			"jsx": true
+		}
+	},
+	"settings": {
+		"react": {
+			"version": "16"
+		}
+	},
+	"rules": {
+		"indent": [
+			"error",
+			"tab"
+		],
+		"linebreak-style": [
+			"error",
+			"unix"
+		],
+		"quotes": [
+			"error",
+			"double"
+		],
+		"semi": [
+			"error",
+			"never"
+		],
+		"no-tabs": "off",
+		"space-before-function-paren": "off",
+		"react/prop-types": "off",
+		"react/jsx-handler-names": "off",
+		"react/jsx-fragments": "off",
+		"react/no-unused-prop-types": "off",
+		"import/export": "off",
+		"no-use-before-define": "off",
+		"@typescript-eslint/no-use-before-define": ["error"]
+	}
+}
